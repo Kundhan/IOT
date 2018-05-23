@@ -25,4 +25,5 @@ But when Kafka MQTT connection is made Kafka Server was up for some time and Ser
 
 
 Why Kafka on Big Data Side?
+
 Since MQTT is designed for low-power devices, it cannot handle the ingestion of massive datasets. On the other hand, Apache Kafka may deal with high-velocity data ingestion but not with M2M 
