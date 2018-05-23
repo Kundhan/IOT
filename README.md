@@ -14,6 +14,7 @@ After a good research I found that MQTT is light weight on the Sensor side as we
 
 You might have a question, why can’t we use Kafka directly on the Raspberry Pi?
 Why not only KAFKA? Why MQTT on Sensors?
+
 It’s because of the available resources like CPU and RAM on the Raspberry Pi.
 MQTT runs by consuming less resources.
 Kafka needs good amount of resources. 
@@ -21,6 +22,7 @@ On Raspberry Pi, the amount of RAM is 1 GB, free RAM space remaining after MQTT 
 We can also make Kafka to use less memory
 I have to adjust Kafka configuration files to use less memory (128 MB). Then Kafka server started on Pi.
 But when Kafka MQTT connection is made Kafka Server was up for some time and Server got killed on Pi.
+
 
 Why Kafka on Big Data Side?
 Since MQTT is designed for low-power devices, it cannot handle the ingestion of massive datasets. On the other hand, Apache Kafka may deal with high-velocity data ingestion but not with M2M 
