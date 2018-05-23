@@ -26,4 +26,19 @@ But when Kafka MQTT connection is made Kafka Server was up for some time and Ser
 
 Why Kafka on Big Data Side?
 
-Since MQTT is designed for low-power devices, it cannot handle the ingestion of massive datasets. On the other hand, Apache Kafka can deal with high-velocity data ingestion but not with M2M 
+Since MQTT is designed for low-power devices, it cannot handle the ingestion of massive datasets. On the other hand, Apache Kafka can deal with high-velocity data ingestion but not with M2M.
+
+
+Expansion of this Project:
+1. MQTT, Kafka, Nifi, HDFS(HBase)
+2. MQTT, Kafka, Nifi, Storm, Druid Dashboards.
+
+
+How more can be this Architecture be implemented?
+We have a separate cluster of Hadoop and Kafka, which is a production cluster. Now Kafka cluster will entirely work on Data pipeline and ingest the data into HDFS or any streaming platform.
+At the sensors side a cluster of MQTT can be formed. MQTT Server(Broker) and MQTT clients (MQTT Publishers). MQTT Server can be on a machine and publishers on the Sensors can publish the data from respective sensors to MQTT Server(Broker). They must talk to each other by keeping them in a same network or a VPN can be implemented for Data security.
+
+
+Kafka Connect can also be used, I also used Kafka Connect with MQTT to transfer the data between the topics of MQTT and Kafka. In the same way Kafka connect can also be connected with HDFS ruling out Nifi from the Architecture, but Nifi has great advantages. Please refer the link for article below from Hortonworks Community.
+https://community.hortonworks.com/questions/57852/apache-nifi-and-kafka.html
+
