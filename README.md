@@ -10,3 +10,17 @@ Here I will divide this entire Demo into two parts.
 
 
 After a good research I found that MQTT is light weight on the Sensor side as well as MQTT control packet headers are kept as small as possible. Each MQTT control packet consist of three parts, a fixed header, variable header and payload. Each MQTT control packet has a 2-byte Fixed header. Not all the control packet has the variable headers and payload. A variable header contains the packet identifier if used by the control packet. A payload up to 256 MB could be attached in the packets. Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
+
+
+You might have a question, why can’t we use Kafka directly on the Raspberry Pi?
+Why not only KAFKA? Why MQTT on Sensors?
+It’s because of the available resources like CPU and RAM on the Raspberry Pi.
+MQTT runs by consuming less resources.
+Kafka needs good amount of resources. 
+On Raspberry Pi, the amount of RAM is 1 GB, free RAM space remaining after MQTT and other services related to Raspberry Pi is 234MB, where Kafka was unable to start sometimes because of less memory available in Raspberry Pi and we cannot expect more RAM on devices connected with in IOT. So, using MQTT broker service on the sensor side architecture consumes less resources.
+We can also make Kafka to use less memory
+I have to adjust Kafka configuration files to use less memory (128 MB). Then Kafka server started on Pi.
+But when Kafka MQTT connection is made Kafka Server was up for some time and Server got killed on Pi.
+
+Why Kafka on Big Data Side?
+Since MQTT is designed for low-power devices, it cannot handle the ingestion of massive datasets. On the other hand, Apache Kafka may deal with high-velocity data ingestion but not with M2M 
