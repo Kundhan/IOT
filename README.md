@@ -1,5 +1,5 @@
 # IOT
-In this IOT demo, I have implemented the data flow from Sensors(MQTT)  to the Big Data Platform( HDF+HDP) using Nifi and Kafka.
+In this IOT project, I have implemented the data flow from Sensors(MQTT)  to the Big Data Platform( HDF+HDP) using Nifi and Kafka.
 
 The idea is to transmit the sensor data into Bigdata Platform and perform real time analytics on top of streaming data. Currently, I have finished up building the Big Data environment by installing Hortonworks Data Platform and Hortonworks Data flow on an Ubuntu Machine and executed the IOT demo from Sensor side to the Big Data Platform with including networking between these two platforms. Initially built HDP for Big Data Analytics but after IOT buzz, I have Integrated HDP 2.6.4 (Hortonworks Data Platform) with HDF 3.1(Hortonworks Data Flow). HDF has good ecosystem which has Nifi (Flow file), Storm (can analyze huge amount of Data), Druid (Real time Dashboards) and Kafka (Robust Message broker).
 
